@@ -5,5 +5,6 @@ date: 2019-12-28
 redirect_from:
   - /kaggleBaidu
   - /kagglebaidu
+  - /KaggleBaidu
 ---
 More coming soon...
