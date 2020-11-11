@@ -1,3 +1,5 @@
 name: Eric Pryzant
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+plugins:
+  - jekyll-redirect-from
