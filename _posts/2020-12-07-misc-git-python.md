@@ -9,4 +9,4 @@ redirect_from:
   - /NESEmulator
 ---
 More coming soon...
-Based on https://www.leshenko.net/p/ugit/
+Based on https://www.leshenko.net/p/ugit/ posted on hacker news https://news.ycombinator.com/item?id=24517925
