@@ -1,7 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
-    background: url('/assets/ericpryzant-bw-wide.jpg') no-repeat top center;
+    background: url('/assets/ericpryzant-bw-wide-crop.jpg') no-repeat top center;
     background-size: cover;
 }
 nav ul, footer ul {
@@ -32,17 +32,20 @@ h1 {
     padding:0;
     width:
     font-family: 'Georgia', 'Helvetica', 'Arial', 'Sans-Serif';
+    filter: drop-shadow(0px 0px 10px #c1c1c1);
 }
 
 h2 {
     font: 36px Georgia, serif;
     width: 60%;
+    filter: drop-shadow(0px 0px 10px #c1c1c1);
 }
 
 p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
+    filter: drop-shadow(0px 0px 10px #c1c1c1);
 }
 footer {
     border-top: 1px solid #d5d5d5;
