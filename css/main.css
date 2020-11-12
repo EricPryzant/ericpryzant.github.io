@@ -19,15 +19,12 @@ a {
 /*     color: #999; */
 /*     color: #000000; */
     color: #cf0001;
-    bottom-border:1px solid #cf0001;
+/*     bottom-border:1px solid #cf0001; */
 }
 
-a:link, a:visited { color:#cf0001; text-decoration:none; border-bottom:1px solid #cf0001; }
-a:hover, a:active { color: #58c058; text-decoration:underline; }
-
-/* a:hover {
+a:hover {
     text-decoration: underline;
-} */
+}
 h1 {
 /*     font-size: 3em; */
     font:72/72px Georgia, serif;
