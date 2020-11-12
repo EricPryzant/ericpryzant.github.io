@@ -1,7 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
-    background-image: url('{{ site.baseurl }}/assets/office-932926_1920.jpg');
+    background-image: url('{{ site.baseurl }}/assets/office.jpg');
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
