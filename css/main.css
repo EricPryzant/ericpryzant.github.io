@@ -14,11 +14,13 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-/* a {
+a {
     text-decoration: none;
 /*     color: #999; */
 /*     color: #000000; */
-} */
+    color: #cf0001;
+    bottom-border:1px solid #cf0001;
+}
 
 a:link, a:visited { color:#cf0001; text-decoration:none; border-bottom:1px solid #cf0001; }
 a:hover, a:active { color: #58c058; text-decoration:underline; }
@@ -35,7 +37,7 @@ h1 {
     font-family: 'Georgia', 'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-h3 {
+h2 {
     font: 36px Georgia, serif;
 }
 
