@@ -1,6 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
+    background-image: url('{{ site.baseurl }}/assets/office-932926_1920.jpg');
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -42,6 +43,6 @@ ul.posts li {
     list-style: none;
 }
 
-content {
+/* content {
   background-image: url('{{ site.baseurl }}/assets/office-932926_1920.jpg');
-}
+} */
