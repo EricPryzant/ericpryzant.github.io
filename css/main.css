@@ -56,12 +56,12 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
+    padding: 20px;
+    background: aliceblue;
 }
 
 ul.posts li {
     list-style: none;
-    padding: 20px;
-    background: aliceblue;
 }
 
 /* content {
