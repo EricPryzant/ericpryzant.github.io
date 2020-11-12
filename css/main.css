@@ -27,7 +27,7 @@ a:hover {
 }
 h1 {
 /*     font-size: 3em; */
-    font:72/72px Georgia, serif;
+    font:72px/72px Georgia, serif;
     font-style:normal;
     padding:0;
     width:
@@ -36,6 +36,7 @@ h1 {
 
 h2 {
     font: 36px Georgia, serif;
+    width: 60%;
 }
 
 p {
