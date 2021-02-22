@@ -159,6 +159,7 @@ solution = check_columns(feasible_combos, puzzle_columns)
 Here's the resulting solution!
 
 # Solution
+
 | A | B | C | Product |
 | - | - | - | ------- |
 | 7 | 8 | 5 | 280 |
