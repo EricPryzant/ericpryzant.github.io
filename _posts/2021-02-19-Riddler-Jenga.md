@@ -16,6 +16,8 @@ All the blocks have the same alignment (e.g., east-west). Importantly, whenever 
 (Note: This problem is not asking for the average height of the tower after any unbalanced blocks have fallen off. It is asking for the average number of blocks added in order to make the tower collapse in the first place.)
 
 ## Solution
+
+We're going to attack this problem empirically to derive a solution through many many many simulations. We could absolutely derive an answer from theory by applying basic statistics but it's more fun and good practice to solve this through code.
 ```
 ## Initialize all necessary variables
 import random
@@ -26,14 +28,23 @@ iterations = 1000000
 output_msg = "\nSimulation results:\tAverage={avg}\tHighest={h}\tLowest={l}\tCumulative Total={ct}\tIterations={i}"
 cumulative_height, avg, h, l = 0, 0, 0, 0
 debug = False
+```
 
+The simulation is going to be split up into two main actions. The first function is used to create a new block to be added to the Jenga tower at a random new location. It has to be placed somewhere on top of the last block and should be placed randomly using a uniform distribution.
+
+```
 ## Add a new block to the tower
 def generate_new_block(last_block: float, length: int = 1) -> float:
     rand_start = last_block - length/2
     rand_end = last_block + length/2
     new_block = random.uniform(rand_start, rand_end)
     return new_block
-    
+```
+
+The next function used in this simulation is to check whether or not the tower is stable. An unstable tower will, of course, fall down but this only happens when the weight of the blocks is centered outside of the platform that it rests upon. This means that when we place more than one block on the tower, everything above a given block must have it's center of mass between the left and right sides of the block. We can calculate the center of mass for a group of blocks by treating it as a single object and assuming that each block weighs the same. This allows us to simplify our calculations as we take the average location of the blocks in the group and use that as the center of mass. 
+
+The code below will take a given tower of blocks along with the location of the new block then simulate the center of mass for each segment of the tower, starting from the bottom and working up. If the tower is balanced then the simulation can carry on. If not, then the simulated tower comes crashing down.
+```
 ## Calculate the center of mass for each tower segment and check for balance
 def check_centers_of_mass(tower: list, new_block: float, length=1, debug=False) -> bool:
     height = len(tower)
@@ -47,7 +58,11 @@ def check_centers_of_mass(tower: list, new_block: float, length=1, debug=False) 
         if com < left_bound or com > right_bound:
             return False
     return True
+```
 
+Finally, we simulate the game of Jenga and keep adding blocks to the tower until it collapses. We run this simulation over 100,000 times in order to empirically obtain the average height of our tower before it falls down.
+
+```
 ## Simulate the game of Jenga many many times to derive an empirical result
 for _ in tqdm(range(iterations)):
     tower = [0]
@@ -63,6 +78,12 @@ for _ in tqdm(range(iterations)):
             break
 avg = cumulative_height/iterations
 print(output_msg.format(avg=avg, h=h, l=l, ct=cumulative_height, i=iterations))
+```
+After running this simulation we can confidently assert that the solution to our riddle is 9.9 blocks.
+
+```
+100%|██████████| 100000/100000 [00:04<00:00, 22324.98it/s]
+Simulation results:	Average=9.91903	Highest=58	Lowest=0	Cumulative Total=991903	Iterations=100000
 ```
 
 # Riddler Express
