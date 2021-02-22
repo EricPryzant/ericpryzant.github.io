@@ -160,7 +160,7 @@ Here's the resulting solution!
 
 # Solution
 | A | B | C | Product |
-| :-: | :-: | :-: | :-------: |
+| - | - | - | ------- |
 | 7 | 8 | 5 | 280 |
 | 3 | 8 | 7 | 168 |
 | 9 | 6 | 3 | 162 |
