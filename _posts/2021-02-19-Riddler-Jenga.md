@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Riddler Jenga from Feb. 19, 2021"
-date: 2021-02-019
+date: 2021-02-19
 ---
 # Riddler Classic
 
@@ -82,8 +82,8 @@ print(output_msg.format(avg=avg, h=h, l=l, ct=cumulative_height, i=iterations))
 After running this simulation we can confidently assert that the solution to our riddle is 9.9 blocks.
 
 ```
-100%|██████████| 100000/100000 [00:04<00:00, 22324.98it/s]
-Simulation results:	Average=9.91903	Highest=58	Lowest=0	Cumulative Total=991903	Iterations=100000
+100%|██████████| 100000/100000 [00:04<00:00, 22157.65it/s]
+Simulation results:	Average=9.90683	Highest=58	Lowest=0	Cumulative Total=990683	Iterations=100000
 ```
 
 # Riddler Express
