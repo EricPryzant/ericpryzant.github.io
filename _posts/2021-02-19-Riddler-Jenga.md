@@ -111,6 +111,9 @@ puzzle_rows = [280, 168, 162, 360, 60, 256, 126]
 puzzle_columns = [183708, 245760, 117600]
 ```
 
+This is a pretty fun puzzle that focuses on finding factors for each row and then testing each combination to find one that, when each column is multiplied, the product is equal to the number in the last row. It's similar to solving a sudoku puzzle where each cell of the table is constrained by a set of rules and we have to figure it out. I took a semi-brute-force approach because it's a pretty trivial problem and didn't want to spend too much time solving it. To help reduce the number of attempts that must be made from 10^21 (3 rows * 7 columns) down to 7 * 10^3 combinations to try when we check for column constraints. 
+
+That's a pretty big difference and it shows! As a result of this work done to narrow down the list of feasible combinations we can solve this problem in under a second. We could optimize it further though this is an acceptable amount of work given that this problem is trivial. Next time that this puzzle pops up I'll try to solve it more intelligently by eliminating impossible combinations first.
 ```
 ## Identify every feasible combination for ever row
 ## Don't judge, this is quick and dirty
@@ -127,6 +130,7 @@ def build_row_combinations(rows: list) -> list:
     return combinations
 ```
 
+The check_columns function then goes through every single combination, calculates the product of each column, and then compares it against the contraints in the last row.
 ```
 ## Check each combination to solve the problem
 ## Don't judge, this is quick and dirty
@@ -146,12 +150,13 @@ def check_columns(combinations: list, columns: list) -> list:
                                     print("Solution found!", a,b,c,d,e,f,g)
                                     return [a,b,c,d,e,f,g]
 ```
-
+The last step is to solve the riddle!
 ```
 ## Solve the riddle
 feasible_combos = build_row_combinations(puzzle_rows)
 solution = check_columns(feasible_combos, puzzle_columns)
 ```
+Here's the resulting solution!
 
 # Solution
 | A | B | C | Product |
